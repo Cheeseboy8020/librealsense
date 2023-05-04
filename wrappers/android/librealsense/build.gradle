@@ -46,20 +46,23 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
-publishing {
-    repositories {
-        maven {
-            name = "FTCLibrealsense"
-            url = uri("https://maven.pkg.github.com/Cheeseboy8020/librealsense")
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                name = "FTCLibrealsense"
+                url = uri("https://maven.pkg.github.com/Cheeseboy8020/librealsense")
+                credentials {
+                    username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                    password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+                }
             }
         }
-    }
-    publications {
-        gpr(MavenPublication) {
-            from(components.java)
+        publications {
+            gpr(MavenPublication) {
+                from(components.java)
+            }
         }
     }
 }
