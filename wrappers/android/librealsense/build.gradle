@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 30
@@ -15,6 +16,9 @@ android {
             cmake {
                 arguments "-DFORCE_RSUSB_BACKEND=TRUE"
             }
+        }
+        ndk {
+            abiFilter "armeabi-v7a"
         }
     }
 
@@ -41,4 +45,18 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                groupId = "com.intel.realsense"
+                artifactId "librealsense"
+                version = android.defaultConfig.versionName
+                artifact("$buildDir/outputs/aar/${project.getName()}.aar")
+            }
+        }
+    }
 }

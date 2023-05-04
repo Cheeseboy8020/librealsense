@@ -7,7 +7,7 @@ include ':camera'
 project(':camera').projectDir = new File('tools/camera')
 
 //examples
-include ':capture'
+/*include ':capture'
 project(':capture').projectDir = new File('examples/capture')
 
 include ':playback'
@@ -27,3 +27,4 @@ project(':sensor').projectDir = new File('examples/sensor')
 
 include ':stream_pipeline_callback'
 project(':stream_pipeline_callback').projectDir = new File('examples/stream_pipeline_callback')
+*/
