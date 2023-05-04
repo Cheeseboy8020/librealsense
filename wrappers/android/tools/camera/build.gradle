@@ -4,7 +4,7 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.intel.realsense.camera"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 5
         versionName "0.0.5"
