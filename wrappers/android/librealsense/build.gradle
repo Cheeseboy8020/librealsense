@@ -60,8 +60,12 @@ afterEvaluate {
             }
         }
         publications {
-            gpr(MavenPublication) {
-                from(components.java)
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                groupId = "com.intel.realsense"
+                artifactId "librealsense"
+                version = android.defaultConfig.versionName
+                artifact("$buildDir/outputs/aar/${project.getName()}.aar")
             }
         }
     }
