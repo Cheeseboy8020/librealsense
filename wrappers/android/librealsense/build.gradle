@@ -61,7 +61,7 @@ afterEvaluate {
         }
         publications {
             gpr(MavenPublication) {
-                from(components.java)
+                from(components.release)
             }
         }
     }
