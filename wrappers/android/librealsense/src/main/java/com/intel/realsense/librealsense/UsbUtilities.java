@@ -51,7 +51,7 @@ public class UsbUtilities {
         return res;
     }
 
-    private static List<UsbDevice> getUsbDevices(Context context, Integer vId, Integer pId) {
+    public static List<UsbDevice> getUsbDevices(Context context, Integer vId, Integer pId) {
         ArrayList<UsbDevice> res = new ArrayList<>();
         UsbManager usbManager = (UsbManager) context.getSystemService(Context.USB_SERVICE);
 

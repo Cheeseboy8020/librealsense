@@ -8,7 +8,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
-        versionName "v2.53.1-robotroopers.1"
+        versionName "v2.53.1-robotroopers.2"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
