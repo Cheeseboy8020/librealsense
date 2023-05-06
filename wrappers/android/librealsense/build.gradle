@@ -8,7 +8,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName "v2.53.1-robotroopers.1"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
@@ -65,7 +65,7 @@ afterEvaluate {
                 groupId = "com.intel.realsense"
                 artifactId "librealsense"
                 version = android.defaultConfig.versionName
-                artifact("$buildDir/outputs/aar/${project.getName()}.aar")
+                artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
             }
         }
     }
