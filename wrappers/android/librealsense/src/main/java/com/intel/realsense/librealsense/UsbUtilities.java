@@ -102,7 +102,7 @@ public class UsbUtilities {
         }
     }
 
-    private static List<UsbDevice> getDevices(Context context) {
+    public static List<UsbDevice> getDevices(Context context) {
         List<UsbDevice> res = new ArrayList<>();
 
         Log.w(TAG, "getDevices: requesting list of USB devices matching vId=" + String.format("0x%04x", INTEL_VENDOR_ID));
