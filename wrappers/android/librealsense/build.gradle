@@ -47,6 +47,14 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
 
+task assembleZip(type: Zip) {
+    archiveName "${project.getName()}-release.zip"
+    destinationDir file("$buildDir/outputs/zip/")
+    from "${this.rootDir.parentFile.parent}/include/librealsense2"
+}
+
+publish.dependsOn(assembleZip)
+
 afterEvaluate {
     publishing {
         repositories {
@@ -66,6 +74,7 @@ afterEvaluate {
                 artifactId "librealsense"
                 version = android.defaultConfig.versionName
                 artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
+                artifact("$buildDir/outputs/zip/${project.getName()}-release.zip")
             }
         }
     }
